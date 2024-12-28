@@ -1,0 +1,24 @@
+﻿@model My_Portfolio_.Net_Core_6._0.DAL.Entities.About
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">About Detail</div>
+	</div>
+	<div class="card-body">
+		<form method="post">
+			@Html.HiddenFor(x => x.AboutId)
+			<label>Title</label>
+			<input type="text" asp-for="AboutTitle" class="form-control" />
+			<br />
+			<label>Sub Description</label>
+			<textarea rows="4" asp-for="AboutSubDescription" class="form-control"></textarea>
+			<br />
+			<label>Description</label>
+			<textarea rows="4" asp-for="AboutDetails" class="form-control"></textarea>
+		</form>
+	</div>
+</div>

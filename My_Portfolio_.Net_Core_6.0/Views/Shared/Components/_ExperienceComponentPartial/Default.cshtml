@@ -1,0 +1,28 @@
+﻿@model List<My_Portfolio_.Net_Core_6._0.DAL.Entities.Experience>
+<div class="row about-content about-content--timeline">
+
+    <div class="col-full text-center">
+        <h3>My Work Experience.</h3>
+    </div>
+
+    <div class="col-12">
+        <div class="timeline">
+
+            @foreach (var item in Model)
+            {
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <p class="timeline__timeframe">@item.ExperienceDate</p>
+                        <h3>@item.ExperienceHead</h3>
+                        <h5>@item.ExperienceTitle</h5>
+                    </div>
+                    <div class="timeline__desc">
+                        <p>@item.ExperienceDescription</p>
+                    </div>
+                </div>
+            }
+            
+        </div> <!-- end timeline -->
+
+</div> 

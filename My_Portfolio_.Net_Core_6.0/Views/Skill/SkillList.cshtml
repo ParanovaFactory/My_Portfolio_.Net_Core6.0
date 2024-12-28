@@ -1,0 +1,41 @@
+﻿@using My_Portfolio_.Net_Core_6._0.DAL.Entities
+@model List<Skill>
+@{
+    ViewData["Title"] = "SkillList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Skill List</div>
+	</div>
+	<div class="card-body">
+		<table class="table mt-3">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Title</th>
+					<th scope="col">Value</th>
+					<th scope="col">Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.SkillId</td>
+						<td>@item.SkillTitle</td>
+						<td>@item.SkillValue</td>
+						<td>
+							<a href="/Experience/Edit/@item.SkillId" class="btn btn-warning">Edit</a>
+							<a href="/Experience/Delete/@item.SkillId" class="btn btn-danger">Delete</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+<br />
+<a href="/Experience/Add" class="btn btn-secondary">Add New Skill</a>
+

@@ -1,0 +1,23 @@
+﻿@model My_Portfolio_.Net_Core_6._0.DAL.Entities.Feature
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<<div class="card">
+	<div class="card-header">
+		<div class="card-title">Edit Feature</div>
+	</div>
+	<div class="card-body">
+		<form method="post">
+			@Html.HiddenFor(x => x.FeatureId)
+			<label>Title</label>
+			<input type="text" asp-for="FeatureTitle" class="form-control" />
+			<br />
+			<label>Description</label>
+			<textarea rows="4" asp-for="FeatureDescription" class="form-control"></textarea>
+			<br />
+			<button class="btn btn-primary">SAVE</button>
+		</form>
+	</div>
+</div>

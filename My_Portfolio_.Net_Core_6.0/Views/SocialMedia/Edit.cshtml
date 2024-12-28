@@ -1,0 +1,26 @@
+﻿@model My_Portfolio_.Net_Core_6._0.DAL.Entities.SocialMedia
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Add Experience</div>
+	</div>
+	<div class="card-body">
+		<form method="post">
+			<label>Title</label>
+			<input type="text" asp-for="SocialMediaTitle" class="form-control" />
+			<br />
+			<label>Icon</label>
+			<input type="text" asp-for="SocialMediaIcon" class="form-control" />
+			<br />
+			<label>Link</label>
+			<input type="text" asp-for="SocialMediaLink" class="form-control" />
+			<br />
+			<button class="btn btn-primary">SAVE</button>
+		</form>
+	</div>
+</div>

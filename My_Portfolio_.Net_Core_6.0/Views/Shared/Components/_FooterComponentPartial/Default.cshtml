@@ -1,0 +1,54 @@
+﻿@model List<My_Portfolio_.Net_Core_6._0.DAL.Entities.SocialMedia>
+
+<footer>
+    <div class="row">
+        <div class="col-full">
+
+            <div class="footer-logo">
+                <a class="footer-site-logo" href="#0"><img src="~/webhola/images/logo.png" alt="Homepage"></a>
+            </div>
+
+            <ul class="footer-social">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a href="@item.SocialMediaLink">
+                            <i class="@item.SocialMediaIcon" aria-hidden="true"></i>
+                            <span>@item.SocialMediaTitle</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="row footer-bottom">
+
+        <div class="col-twelve">
+            <div class="copyright">
+                <span>© Copyright Hola @DateTime.Now.Year</span>
+                <span>Design by <a href="https://github.com/ParanovaFactory">SADIK BERKAY KARADUMAN</a></span>
+            </div>
+
+            <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+    </div> <!-- end footer-bottom -->
+
+</footer>
+
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+
+
+<!-- Java Script
+================================================== -->
+<script src="~/webhola/js/jquery-3.2.1.min.js"></script>
+<script src="~/webhola/js/plugins.js"></script>
+<script src="~/webhola/js/main.js"></script>
+<!-- End Script
+================================================== -->

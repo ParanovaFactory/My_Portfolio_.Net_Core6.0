@@ -1,0 +1,44 @@
+﻿@using My_Portfolio_.Net_Core_6._0.DAL.Entities
+@model List<Experience>
+
+@{
+    ViewData["Title"] = "ExperienceList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Experience List</div>
+	</div>
+	<div class="card-body">
+		<table class="table mt-3">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Company</th>
+					<th scope="col">Title</th>
+					<th scope="col">Date</th>
+					<th scope="col">Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.ExperienceId</td>
+						<td>@item.ExperienceHead</td>
+						<td>@item.ExperienceTitle</td>
+						<td>@item.ExperienceDate</td>
+						<td>
+							<a href="/Experience/Detail/@item.ExperienceId" class="btn btn-primary">Details</a>
+							<a href="/Experience/Edit/@item.ExperienceId" class="btn btn-warning">Edit</a>
+							<a href="/Experience/Delete/@item.ExperienceId" class="btn btn-danger">Delete</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+<br />
+<a href="/Experience/Add" class="btn btn-secondary">Add New Experience</a>

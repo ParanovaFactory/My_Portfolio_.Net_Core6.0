@@ -1,0 +1,14 @@
+﻿@model List<My_Portfolio_.Net_Core_6._0.DAL.Entities.Skill>
+<div class="col-six tab-full right">
+    <h3>I've Got Some skills.</h3>
+
+    <ul class="skill-bars">
+        @foreach (var item in Model)
+        {
+            <li>
+                <div class="progress percent\@item.SkillValue"><span>@item.SkillValue%</span></div>
+                <strong>@item.SkillTitle</strong>
+            </li>
+        }
+    </ul>
+</div>

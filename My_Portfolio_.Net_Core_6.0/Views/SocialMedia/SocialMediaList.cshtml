@@ -1,0 +1,43 @@
+﻿@using My_Portfolio_.Net_Core_6._0.DAL.Entities
+@model List<SocialMedia>
+@{
+    ViewData["Title"] = "SocialMediaList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Experience List</div>
+	</div>
+	<div class="card-body">
+		<table class="table mt-3">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Title</th>
+					<th scope="col">Icon</th>
+					<th scope="col">Link</th>
+					<th scope="col">Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.SocialMediaId</td>
+						<td>@item.SocialMediaTitle</td>
+						<td>@item.SocialMediaIcon</td>
+						<td>@item.SocialMediaLink</td>
+						<td>
+							<a href="/Experience/Edit/@item.SocialMediaId" class="btn btn-warning">Edit</a>
+							<a href="/Experience/Delete/@item.SocialMediaId" class="btn btn-danger">Delete</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+<br />
+<a href="/Experience/Add" class="btn btn-secondary">Add New Social Media</a>
+

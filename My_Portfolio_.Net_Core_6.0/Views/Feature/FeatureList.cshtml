@@ -1,0 +1,38 @@
+﻿@using My_Portfolio_.Net_Core_6._0.DAL.Entities
+@model List<Feature>
+@{
+    ViewData["Title"] = "FeatureList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Feature List</div>
+	</div>
+	<div class="card-body">
+		<table class="table mt-3">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Title</th>
+					<th scope="col">Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.FeatureId</td>
+						<td>@item.FeatureTitle</td>
+						<td>
+							<a href="/Feature/Detail/@item.FeatureId" class="btn btn-primary">Details</a>
+							<a href="/Feature/Edit/@item.FeatureId" class="btn btn-warning">Edit</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+<br />
+

@@ -1,0 +1,32 @@
+﻿@model My_Portfolio_.Net_Core_6._0.DAL.Entities.Contact
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Edit Contact</div>
+	</div>
+	<div class="card-body">
+		<form method="post">
+			@Html.HiddenFor(x => x.ContactId)
+			<label>Title</label>
+			<input type="text" asp-for="ContactTitle" class="form-control" />
+			<br />
+			<label>Description</label>
+			<textarea rows="4" asp-for="ContactDescription" class="form-control"></textarea>
+			<br />
+			<label>Phone</label>
+			<input type="text" asp-for="ContactPhone" class="form-control" />
+			<br />
+			<label>E-Mail</label>
+			<input type="text" asp-for="ContactEmail" class="form-control" />
+			<br />
+			<label>Address</label>
+			<input type="text" asp-for="ContactAddress" class="form-control" />
+			<br />
+			<button class="btn btn-primary">SAVE</button>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model My_Portfolio_.Net_Core_6._0.DAL.Entities.Message
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Detail Experience</div>
+	</div>
+	<div class="card-body">
+		<form method="post">
+			@Html.HiddenFor(x => x.MessageId)
+			<label>Sender</label>
+			<input type="text" asp-for="MessageSender" class="form-control" />
+			<br />
+			<label>Subject</label>
+			<input type="text" asp-for="MessageSubject" class="form-control" />
+			<br />
+			<label>E-Mail</label>
+			<input type="text" asp-for="MessageEmail" class="form-control" />
+			<br />
+			<label>Date</label>
+			<input type="text" asp-for="MessageDate" class="form-control" />
+			<br />
+			<label>Description</label>
+			<textarea rows="4" asp-for="MessageDetail" class="form-control"></textarea>
+		</form>
+	</div>
+</div>

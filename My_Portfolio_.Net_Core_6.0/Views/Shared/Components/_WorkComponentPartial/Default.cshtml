@@ -1,0 +1,50 @@
+﻿@model List<My_Portfolio_.Net_Core_6._0.DAL.Entities.Portfolio>
+
+<section id="works" class="s-works target-section">
+
+    <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full">
+            <h3>Portfolio</h3>
+            <h1>See My Latest Projects.</h1>
+        </div>
+    </div>
+
+    <div class="row masonry-wrap">
+        <div class="masonry">
+            @foreach (var item in Model)
+            {
+                <div class="masonry__brick">
+                    <div class="item-folio">
+
+                        <div class="item-folio__thumb">
+                            <a href="@item.PortfolioImage" class="thumb-link" title="The Beetle Car" data-size="1050x700">
+                                <img src="@item.PortfolioImage"
+                                     srcset="@item.PortfolioImage, @item.PortfolioImage" alt="">
+                                <span class="shadow-overlay"></span>
+                            </a>
+                        </div>
+
+                        <div class="item-folio__text">
+                            <h3 class="item-folio__title">
+                                @item.PortfolioTitle
+                            </h3>
+                            <p class="item-folio__cat">
+                                @item.PortfolioSubTitle
+                            </p>
+                        </div>
+
+                        <a href="@item.PortfolioUrl" class="item-folio__project-link" title="Project link">
+                            <i class="im im-link"></i>
+                        </a>
+
+                        <div class="item-folio__caption">
+                            <p>@item.PortfolioDescription</p>
+                        </div>
+
+                    </div> <!-- end item-folio -->
+                </div> <!-- end masonry__brick -->
+            }
+        </div>
+    </div>
+
+</section> 

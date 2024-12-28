@@ -1,0 +1,43 @@
+﻿@model List<My_Portfolio_.Net_Core_6._0.DAL.Entities.About>
+
+<section id="about" class="s-about target-section">
+
+    <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full text-center">
+            <h3>About</h3>
+        </div>
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="row about-content">
+
+            <div class="col-six tab-full left">
+                <h3>@item.AboutTitle</h3>
+
+                <p>@item.AboutSubDescription</p>
+
+                <p>
+                    @item.AboutDetails
+                </p>
+            </div>
+
+            @await Component.InvokeAsync("_SkillComponentPartial")
+
+        </div>
+    }
+    <!-- end about-content -->
+
+    <div class="row about-content about-content--buttons">
+
+        <div class="col-six tab-full left">
+            <a href="#0" class="btn btn--primary full-width">Download My CV</a>
+        </div>
+        <div class="col-six tab-full right">
+            <a href="#0" class="btn full-width">Hire Me Now</a>
+        </div>
+
+    </div> <!-- end about-content buttons -->
+    @await Component.InvokeAsync("_ExperienceComponentPartial")
+    <!-- end about-content timeline -->
+
+</section> 

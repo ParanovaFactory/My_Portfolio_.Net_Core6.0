@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+@await Component.InvokeAsync("_HeadComponentPartial")
+
+<body id="top">
+
+    @await Component.InvokeAsync("_HeaderComponentPartial")
+    
+    @await Component.InvokeAsync("_FeatureComponentPartial")
+    
+    @await Component.InvokeAsync("_AboutComponentPartial")
+    
+    @await Component.InvokeAsync("_WorkComponentPartial")
+    
+    @await Component.InvokeAsync("_TestimonialComponentPartial")
+    
+    @await Component.InvokeAsync("_StatComponentPartial")
+    
+    @await Component.InvokeAsync("_ContactComponentPartial")
+    
+    @await Component.InvokeAsync("_FooterComponentPartial")
+
+    @await Component.InvokeAsync("_PhotoSwipeComponentPartial")
+
+</body>
+
+</html>

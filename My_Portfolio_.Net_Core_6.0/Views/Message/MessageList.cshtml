@@ -1,0 +1,46 @@
+﻿@using My_Portfolio_.Net_Core_6._0.DAL.Entities
+@model List<Message>
+
+@{
+    ViewData["Title"] = "MessageList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Message List</div>
+	</div>
+	<div class="card-body">
+		<table class="table mt-3">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Sender</th>
+					<th scope="col">Subject</th>
+					<th scope="col">E-mail</th>
+					<th scope="col">Detail</th>
+					<th scope="col">Date</th>
+					<th scope="col">Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.MessageId</td>
+						<td>@item.MessageSender</td>
+						<td>@item.MessageSubject</td>
+						<td>@item.MessageEmail</td>
+						<td>@item.MessageDetail</td>
+						<td>@item.MessageDate</td>
+						<td>
+							<a href="/Message/Detail/@item.MessageId" class="btn btn-primary">Details</a>
+							<a href="/Message/Edit/@item.MessageId" class="btn btn-warning">Read It</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+<br />

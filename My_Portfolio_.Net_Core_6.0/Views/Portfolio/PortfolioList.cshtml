@@ -1,0 +1,42 @@
+﻿@using My_Portfolio_.Net_Core_6._0.DAL.Entities
+@model List<Portfolio>
+@{
+    ViewData["Title"] = "PortfolioList";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Portfolio List</div>
+	</div>
+	<div class="card-body">
+		<table class="table mt-3">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Title</th>
+					<th scope="col">Sub Title</th>
+					<th scope="col">Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>@item.PortfolioId</td>
+						<td>@item.PortfolioTitle</td>
+						<td>@item.PortfolioSubTitle</td>
+						<td>
+							<a href="/Portfolio/Detail/@item.PortfolioId" class="btn btn-primary">Details</a>
+							<a href="/Portfolio/Edit/@item.PortfolioId" class="btn btn-warning">Edit</a>
+							<a href="/Portfolio/Delete/@item.PortfolioId" class="btn btn-danger">Delete</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+<br />
+<a href="/Portfolio/Add" class="btn btn-secondary">Add New Portfolio</a>
+

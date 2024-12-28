@@ -1,0 +1,29 @@
+﻿@model My_Portfolio_.Net_Core_6._0.DAL.Entities.Experience
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="card">
+	<div class="card-header">
+		<div class="card-title">Edit Experience</div>
+	</div>
+	<div class="card-body">
+		<form method="post">
+			@Html.HiddenFor(x => x.ExperienceId)
+			<label>Company</label>
+			<input type="text" asp-for="ExperienceHead" class="form-control" />
+			<br />
+			<label>Title</label>
+			<input type="text" asp-for="ExperienceTitle" class="form-control" />
+			<br />
+			<label>Date</label>
+			<input type="text" asp-for="ExperienceDate" class="form-control" />
+			<br />
+			<label>Description</label>
+			<textarea rows="4" asp-for="ExperienceDescription" class="form-control"></textarea>
+			<br />
+			<button class="btn btn-primary">SAVE</button>
+		</form>
+	</div>
+</div>
